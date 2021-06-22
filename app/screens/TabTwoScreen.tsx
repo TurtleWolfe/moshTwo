@@ -1,7 +1,7 @@
-// import * as React from 'react';
-// import React, { useState } from 'react';
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import * as React from 'react';
+// import React from 'react';
+// import React from 'react';
+import { Button, Image, Platform, StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
@@ -10,6 +10,8 @@ import AppButton from '../components/AppButton';
 import AppCard from '../components/AppCard';
 import AppCategoryPickerItem from '../components/AppCategoryPickerItem';
 import AppIcon from '../components/AppIcon';
+import AppImageInput from '../components/AppImageInput';
+import AppImageInputList from '../components/AppImageInputList';
 import AppPicker from '../components/AppPicker';
 import AppPickerItem from '../components/AppPickerItem';
 import AppScreen from '../components/AppScreen';
@@ -21,6 +23,7 @@ import AppErrorMessage from '../components/forms/AppErrorMessage';
 import AppForm from '../components/forms/AppForm';
 import AppFormField from '../components/forms/AppFormField';
 import AppFormPicker from '../components/forms/AppFormPicker';
+import FormImagePicker from '../components/forms/FormImagePicker';
 import AppSubmitButton from '../components/forms/AppSubmitButton';
 
 //  App lists Components
@@ -41,6 +44,7 @@ import WelcomeScreen from './componentScreens/WelcomeScreen';
 
 import Palette from '../constants/palette';
 import defaultStyles from '../constants/styles';
+import * as ImagePicker from "expo-image-picker";
 
 // const categories = [
 //   { label: 'Furniture', value: 1 },
@@ -50,6 +54,16 @@ import defaultStyles from '../constants/styles';
 
 export default function TabTwoScreen() {
   // const [category, setCategory] = useState(categories[0]);
+  // const [imageUris, setImageUris] = useState([]);
+  // const [image, setImage] = useState(null);
+
+  // const handleAdd = (uri: any) => {
+  //   setImageUris([...imageUris, uri])
+  // }
+
+  // const handleRemove = (uri: any) => {
+  //   setImageUris(imageUris.filter(imageUri => imageUri !== uri))
+  // }
 
   return (
     <View style={styles.container}>
@@ -102,6 +116,22 @@ export default function TabTwoScreen() {
       {/* <AppForm /> */}
       {/* <AppFormField /> */}
       {/* <AppFormPicker /> */}
+
+      {/* <AppButton title="Select Image" onPress={pickImage} /> */}
+      {/* {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />} */}
+
+      {/* <AppImageInput
+        imageUri={image}
+        onChangeImage={(uri: React.SetStateAction<null>) => setImage(uri)}
+      /> */}
+
+      {/* <AppImageInputList
+        imageUris={imageUris}
+        onAddImage={handleAdd}
+        onRemoveImage={handleRemove}
+      /> */}
+
+      {/* <FormImagePicker /> */}
       {/* <AppSubmitButton /> */}
 
       {/* <AppListItemSeparator /> */}

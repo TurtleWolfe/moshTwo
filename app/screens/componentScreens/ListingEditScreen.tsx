@@ -3,11 +3,12 @@
 //ListingEditScreen // //custom components
 //ListingEditScreen
 //TurtleWolfe.com // //custom components
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   StyleSheet,
 } from 'react-native'
 import * as Yup from "yup";
+import * as Location from 'expo-location';
 
 import {
   AppForm as Form,
@@ -18,12 +19,31 @@ import {
 import Screen from "../../components/AppScreen";
 import AppCategoryPickerItem from "../../components/AppCategoryPickerItem";
 import PickerItem from "../../components/AppPickerItem";
+import FormImagePicker from '../../components/forms/FormImagePicker';
 
 const validationSchema = Yup.object().shape({
-  title: Yup.string().required().min(1).label("Title"),
-  price: Yup.number().required().min(1).max(10000).label("Price"),
-  description: Yup.string().label("Description"),
-  category: Yup.object().required().nullable().label("Category"),
+  title: Yup
+    .string()
+    .required()
+    .min(1)
+    .label("Title"),
+  price: Yup
+    .number()
+    .required()
+    .min(1)
+    .max(10000)
+    .label("Price"),
+  description: Yup
+    .string()
+    .label("Description"),
+  category: Yup
+    .object()
+    // .required()
+    .nullable()
+    .label("Category"),
+  images: Yup
+    .array()
+  // .min(1, 'Please select at least one image.')
 });
 
 const categories = [
@@ -84,12 +104,29 @@ const categories = [
 ];
 
 interface ListingEditScreenProps {
-
+  // location?: {coords?:{}}
 } // typeScript
 
 const ListingEditScreen: React.FC<ListingEditScreenProps> = ({
 
 }) => {
+  const [location, setLocation] = useState();
+  // const [category, setCategory] = useState(categories[0]);
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        // setErrorMsg('Permission to access location was denied');
+        return;
+      }
+
+      let location = await Location.getCurrentPositionAsync({});
+      // setLocation({ latitude, longitude });
+      setLocation(location);
+    })();
+  }, []);
+
   return (
     <Screen style={styles.container}>
       <Form
@@ -98,10 +135,14 @@ const ListingEditScreen: React.FC<ListingEditScreenProps> = ({
           price: "",
           description: "",
           category: null,
+          images: [],
         }}
-        onSubmit={(values: any) => console.log(values)}
+        onSubmit={(values: any) => console.log(location)}
         validationSchema={validationSchema}
       >
+        <FormImagePicker
+          name='images'
+        />
         <FormField
           name="title"
           maxLength={255}
