@@ -3,12 +3,11 @@
 //ListingEditScreen // //custom components
 //ListingEditScreen
 //TurtleWolfe.com // //custom components
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import {
   StyleSheet,
 } from 'react-native'
 import * as Yup from "yup";
-import * as Location from 'expo-location';
 
 import {
   AppForm as Form,
@@ -18,8 +17,9 @@ import {
 } from "../../components/forms";
 import Screen from "../../components/AppScreen";
 import AppCategoryPickerItem from "../../components/AppCategoryPickerItem";
-import PickerItem from "../../components/AppPickerItem";
+import AppPickerItem from "../../components/AppPickerItem";
 import FormImagePicker from '../../components/forms/FormImagePicker';
+import useLocation from '../../../hooks/useLocation';
 
 const validationSchema = Yup.object().shape({
   title: Yup
@@ -38,7 +38,7 @@ const validationSchema = Yup.object().shape({
     .label("Description"),
   category: Yup
     .object()
-    // .required()
+    .required()
     .nullable()
     .label("Category"),
   images: Yup
@@ -110,22 +110,7 @@ interface ListingEditScreenProps {
 const ListingEditScreen: React.FC<ListingEditScreenProps> = ({
 
 }) => {
-  const [location, setLocation] = useState();
-  // const [category, setCategory] = useState(categories[0]);
-
-  useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        // setErrorMsg('Permission to access location was denied');
-        return;
-      }
-
-      let location = await Location.getCurrentPositionAsync({});
-      // setLocation({ latitude, longitude });
-      setLocation(location);
-    })();
-  }, []);
+  const location = useLocation();
 
   return (
     <Screen style={styles.container}>
@@ -159,8 +144,8 @@ const ListingEditScreen: React.FC<ListingEditScreenProps> = ({
           items={categories}
           numberOfColumns={3}
           name="category"
-          PickerItemComponent={AppCategoryPickerItem}
-          // PickerItemComponent={PickerItem}
+          // PickerItemComponent={AppCategoryPickerItem}
+          PickerItemComponent={AppPickerItem}
           width='50%'
           placeholder="Category"
         />

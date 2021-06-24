@@ -17,6 +17,7 @@ import AppPickerItem from '../components/AppPickerItem';
 import AppScreen from '../components/AppScreen';
 import AppText from '../components/AppText';
 import AppTextInput from '../components/AppTextInput';
+import AppUseLocation from '../components/AppUseLocation';
 
 //  App form Components
 import AppErrorMessage from '../components/forms/AppErrorMessage';
@@ -45,6 +46,7 @@ import WelcomeScreen from './componentScreens/WelcomeScreen';
 import Palette from '../constants/palette';
 import defaultStyles from '../constants/styles';
 import * as ImagePicker from "expo-image-picker";
+import useLocation from '../../hooks/useLocation';
 
 // const categories = [
 //   { label: 'Furniture', value: 1 },
@@ -108,7 +110,7 @@ export default function TabTwoScreen() {
         icon='email'
         placeholder='User Name'
       /> */}
-
+      {/* <AppUseLocation /> */}
       {/* <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" /> */}
       {/* <AppListItemSeparator /> */}
       {/* <Text style={styles.title}>form Components</Text> */}

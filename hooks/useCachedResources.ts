@@ -20,6 +20,7 @@ export default function useCachedResources() {
           'CharterBold': require('../app/assets/fonts/CharterBold.otf'),
           'CharterItalic': require('../app/assets/fonts/CharterItalic.otf'),
           'CharterRegular': require('../app/assets/fonts/CharterRegular.otf'),
+          'Sacremento': require('../app/assets/fonts/Sacramento/Sacramento-Regular.ttf'),
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service
