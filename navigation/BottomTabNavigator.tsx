@@ -11,13 +11,12 @@ import * as React from 'react';
 import Colors from '../app/constants/Colors';
 import palette from '../app/constants/palette';
 // import defaultStyles from "../constants/styles";
-// import defaultStyles from "../app/constants/styles";
+import defaultStyles from "../app/constants/styles";
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../app/screens/TabOneScreen';
 import TabTwoScreen from '../app/screens/TabTwoScreen';
+import AuthNavigator from './AuthNavigator';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
-
-
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -28,22 +27,33 @@ export default function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="TabOne"
       tabBarOptions={{
-        activeTintColor: Colors[colorScheme].tint,
-        inactiveBackgroundColor: palette.secondary,
+        // activeTintColor: Colors[colorScheme].tint,
+        activeTintColor: defaultStyles.palette.darkGrey,
         activeBackgroundColor: palette.primary,
+        inactiveBackgroundColor: palette.secondary,
+        // inactiveTintColor: Colors[colorScheme].tint,
+        // inactiveTintColor: defaultStyles.palette.lightGrey,
       }}>
       <BottomTab.Screen
         name="TabOne"
         component={TabOneNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon
+            name="home"
+            color={color}
+          // size={30}
+          />,
         }}
       />
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon
+            name="ios-code"
+            color={color}
+          // size={55}
+          />,
         }}
       />
     </BottomTab.Navigator>
@@ -52,8 +62,19 @@ export default function BottomTabNavigator() {
 
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
-function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+function TabBarIcon(props: {
+  name: React.ComponentProps<typeof Ionicons>['name'];
+  color: string;
+  size?: number;
+}) {
+  return <Ionicons
+    size={30}
+    style={{
+      // marginBottom: -3,
+      marginRight: 7,
+    }}
+    {...props}
+  />;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:

@@ -12,6 +12,7 @@ import {
 import AppScreen from "../../components/AppScreen";
 import AppCard from "../../components/AppCard";
 import Palette from '../../constants/palette';
+import routes from '../../../navigation/routes'
 
 const listings = [
   {
@@ -41,11 +42,14 @@ const listings = [
 ];
 
 interface ListingsScreenProps {
+  navigation?: any;
   data?: {}[];
+
   // children?: React.ReactNode[];
 }
 
 const ListingsScreen: React.FC<ListingsScreenProps> = ({
+  navigation,
   data,
   // children = <Text>default ListingsScreen</Text>,
 }) => {
@@ -59,6 +63,7 @@ const ListingsScreen: React.FC<ListingsScreenProps> = ({
             title={item.title}
             subTitle={"$" + item.price}
             image={item.image}
+            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
       />

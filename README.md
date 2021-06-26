@@ -264,14 +264,15 @@ app Form Picker
 
 ### [Native Features #6 Encapsulating Styles](https://codewithmosh.com/courses/955852/lectures/17711043 '2:00 expo install expo-image-picker')
 
-[Native Features #6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'rnsf Functional Component')  
-[Native Features #6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'rnsf Functional Component')  
-[Native Features #6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'rnsf Functional Component')  
-[Native Features #6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'rnsf Functional Component')  
-[Native Features #6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'rnsf Functional Component')  
-[Native Features #6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'rnsf Functional Component')  
-[Native Features #6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'rnsf Functional Component')  
-[Native Features #6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'rnsf Functional Component')
+### [Navigation (50m) # 12- Building AuthNavigator](https://codewithmosh.com/courses/955852/lectures/17711333 'custom notes Auth Navigation') \_ Auth Navigator
+
+[Navigation (50m) 14- Building AppNavigator](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes App Navigator') \_ App Navigator  
+[Navigation (50m) 15- Building FeedNavigator](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes') \_ Feed Navigator  
+[Navigation (50m) 16- Building AccountNavigator](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes') \_ Account Navigator  
+[Networking (1h) 6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes')  
+[Networking (1h) 6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes')  
+[Networking (1h) 6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes')  
+[Networking (1h) 6 Encapsulating Styles](https://codewithmosh.com/courses/887220/lectures/16617561 'custom notes')
 
 [Uploading Apps to the Apple App Store and Google Play](https://docs.expo.io/distribution/uploading-apps/ 'Uploading Apps to the Apple App Store and Google Play')  
 [Overview](https://docs.expo.io/distribution/introduction/ 'Overview')  

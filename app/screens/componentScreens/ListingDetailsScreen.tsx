@@ -15,26 +15,28 @@ import AppListItem from "../../components/lists/AppListItem";
 import Palette from '../../constants/palette';
 
 interface ListingDetailsScreenProps {
-  // alpha?: string;
+  route?: any;
 }
 
 const ListingDetailsScreen: React.FC<ListingDetailsScreenProps> = ({
-  // alpha,
+  route,
 }) => {
+  const listing = route.params;
+
   return (
     <View style={styles.container}>
       <Image
         style={styles.image}
-        source={require("../../assets/images/adaptive-icon.png")}
+        source={listing.image}
       />
       <View style={styles.detailsContainer}>
         <AppText
           style={styles.title}>
-          Red jacket for sale
+          {listing.title}
         </AppText>
         <AppText
           style={styles.price}>
-          $100
+          ${listing.price}
         </AppText>
         <View style={styles.userContainer}>
           <AppListItem

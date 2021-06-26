@@ -22,7 +22,7 @@ interface WelcomeScreenProps {
   // delta?: number;
   // epsilon?: number[]
   // zeta?: boolean;
-  // WelcomeScreen?: string;
+  navigation?: any;
 }
 
 const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
@@ -32,7 +32,7 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
   // delta,
   // epsilon,
   // zeta,
-  // WelcomeScreen = 'WelcomeScreen',
+  navigation,
 }) => {
   return (
     <ImageBackground
@@ -50,12 +50,18 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({
       <View style={styles.buttonsContainer}>
         <AppButton
           title="Login"
-          onPress={() => console.log('tapped Login Button')}
+          onPress={() =>
+            navigation.navigate("Login")
+            // .console.log('tapped Login Button')
+          }
         />
         <AppButton
           title="Register"
           color="secondary"
-          onPress={() => console.log('tapped Register Button')}
+          onPress={() =>
+            navigation.navigate("Register")
+            // .console.log('tapped Register Button')
+          }
         />
       </View>
     </ImageBackground>

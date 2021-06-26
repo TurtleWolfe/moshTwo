@@ -24,7 +24,7 @@ interface AccountScreenProps {
   gamma?: string[];
   delta?: number;
   epsilon?: number[]
-  zeta?: boolean;
+  navigation?: any;
   children?: React.ReactNode[];
   AccountScreen?: string;
 }
@@ -43,6 +43,7 @@ const menuItems = [
       name: "email",
       backgroundColor: Palette.secondary,
     },
+    targetScreen: 'Messages'
   },
 ];
 
@@ -52,7 +53,7 @@ const AccountScreen: React.FC<AccountScreenProps> = ({
   gamma,
   delta,
   epsilon,
-  zeta,
+  navigation,
   children = <Text>default AccountScreen</Text>,
   AccountScreen = 'AccountScreen',
 }) => {
@@ -82,6 +83,7 @@ const AccountScreen: React.FC<AccountScreenProps> = ({
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         />

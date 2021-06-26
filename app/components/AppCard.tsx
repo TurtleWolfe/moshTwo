@@ -15,6 +15,7 @@ import {
 
 import AppText from "./AppText";
 import Palette from '../constants/palette';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 interface AppCardProps {
   title?: string;
@@ -22,34 +23,42 @@ interface AppCardProps {
   // image?: ImageURISource;
   // image?: (id: string)=> void;
   image?: string;
+  onPress?: any;
 }
 
 const AppCard: React.FC<AppCardProps> = ({
   title = 'default AppCard title',
   subTitle = 'default AppCard subTitle in "Charter Bold Italic"',
   image = require('../assets/images/Turtlewolfe.png'),
+  onPress = (console.log('press appCard')),
 }) => {
   return (
-    <View style={styles.card}>
-      <Image
-        style={styles.image}
-        source={image}
-      />
-      <View style={styles.detailsContainer}>
-        <AppText
-          style={styles.title}
-          numberOfLines={1}
-        >
-          {title}
-        </AppText>
-        <AppText
-          style={styles.subTitle}
-          numberOfLines={3}
-        >
-          {subTitle}
-        </AppText>
+    <TouchableWithoutFeedback
+      onPress={onPress}
+    >
+
+      <View style={styles.card}>
+        <Image
+          style={styles.image}
+          source={image}
+        />
+        <View style={styles.detailsContainer}>
+          <AppText
+            style={styles.title}
+            numberOfLines={1}
+          >
+            {title}
+          </AppText>
+          <AppText
+            style={styles.subTitle}
+            numberOfLines={3}
+          >
+            {subTitle}
+          </AppText>
+        </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
+
   )
 }
 
