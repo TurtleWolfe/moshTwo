@@ -69,6 +69,8 @@ npm install @react-native-community/datetimepicker --legacy-peer-deps
 
 expo install yup
 expo install formik
+expo install lottie-react-native
+expo install react-native-progress
 
 expo install expo-image-picker
 # expo install expo-permissions
